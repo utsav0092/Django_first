@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<head>
-<title>Login page</title>
-</head>
-<html>
-<body>
-    <div class="login-form" style="text-align: center">
-        <form>
-            <input type="email" name="email" placeholder="Enter the Email"><br><br>
-            <input type="password" name="password" placeholder="Enter your Password"><br><br>
-            <input type="Submit"><br><br>
-            <hr>
-            <p>Don't have any accont yet</p>
-        </form>
-    <div>
-</body>
-</html>
+<form method='post'>
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input type="submit" value="Login">
+</form>

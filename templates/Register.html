@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <title>Register</title>
-    </head>
-    <body>
-        <div style="text-align: center;">
-        <form>
-        <input type="text" name="first_name" placeholder="First Name"><br><br>
-        <input type="text" name="last_name" placeholder="Last Name"><br><br>
-        <input type="text" name="username" placeholder="Usernmae"><br><br>
-        <input type="password" name="password1" placeholder="Password"><br><br>
-        <input type="password" name="password2" placeholder="Password"><br><br>
-        <input type="Submit">
-    </form>
-</div>
-    </body>
-</html>
+<form method='post'>
+    {{ form.as_table }}
+    {% csrf_token %}
+    <input type="submit" value="Register">
+</form>

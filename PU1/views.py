@@ -21,9 +21,6 @@ def register1(request):
     else:
         form = UserCreationForm()
     return render(request,'register1.html',{'form':form})
-# def login1(request):
-#         form = AuthenticationForm()
-#         return render(request,'login1.html',{'form':form})
 def login1(request):
     if request.method == "POST":
         form = AuthenticationForm(request = request, data = request.POST)
