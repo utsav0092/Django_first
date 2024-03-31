@@ -4,24 +4,27 @@ from django.contrib.auth import authenticate
 
 def home(request):
     return render(request,'index.html')
-def About(request):
-    return render(request, "About.html")
+def about(request):
+    return render(request, "about.html")
 def index(request):
     return render(request, "index.html")
-def Register(request):
-    return render(request, "Register.html")
-def Login(request):
-    return render(request, "Login.html")
-def register1(request):
+def register(request):
+    return render(request, "register.html")
+def login(request):
+    return render(request, "login.html")
+def query(request):
+    return render(request, "query.html")
+
+def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login1')
+            return redirect('login')
     else:
         form = UserCreationForm()
-    return render(request,'register1.html',{'form':form})
-def login1(request):
+    return render(request,'register.html',{'form':form})
+def login(request):
     if request.method == "POST":
         form = AuthenticationForm(request = request, data = request.POST)
         if form.is_valid():
@@ -31,4 +34,4 @@ def login1(request):
             return render(request, 'profile.html')
     else:
         form = AuthenticationForm()
-    return render(request, 'login1.html', {'form':form})
+    return render(request, 'login.html', {'form':form})

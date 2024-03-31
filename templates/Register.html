@@ -1,5 +1,52 @@
-<form method='post'>
-    {{ form.as_table }}
-    {% csrf_token %}
-    <input type="submit" value="Register">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background: rgb(131, 58, 180);
+        background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    }
+
+    .container a {
+        text-decoration: none;
+        color: blue;
+    }
+
+    .container {
+        text-align: center;
+        padding: 12px;
+        height: 60vh;
+        width: 40vw;
+        color: white;
+        margin: 34px auto;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border-radius: 10px;
+    }
+    
+</style>
+
+<body>
+    <div class="container">
+        <h1>Register Page</h1>
+        <form method='post'>
+            {{ form.as_table }}
+            {% csrf_token %}
+            <input type="submit" value="register">
+        </form>
+        <a href="{% url 'login' %}">Already have one?</a>
+    </div>
+</body>
+
+</html>
